@@ -1,37 +1,25 @@
 # Projects with React
 
+Welcome to the repository containing various React projects!
+
 ## Table of Contents
 
-- [SearchFilter](#searchfilter)
+- [Search Filter](#search-filter)
 - [Counter](#counter)
+- [Project 3](#project-3)
+- ... (list all your projects)
 
-<a name="searchfilter"></a>
+<a name="search-filter"></a>
 
-## SearchFilter
+## Search Filter
 
-Description and details of the SearchFilter project.
+Description and details of the Search Filter project.
 
 ### Features
 
 - Feature 1
 - Feature 2
 - ...
-
-### Getting Started
-
-Instructions on how to set up and run the SearchFilter project.
-
-### Usage
-
-Details on how to use the SearchFilter project.
-
-### Contributing
-
-Guidelines for contributing to the SearchFilter project.
-
-### License
-
-License information for the SearchFilter project.
 
 <a name="counter"></a>
 
@@ -45,18 +33,8 @@ Description and details of the Counter project.
 - Feature 2
 - ...
 
-### Getting Started
+<a name="project-3"></a>
 
-Instructions on how to set up and run the Counter project.
+## Project 3
 
-### Usage
-
-Details on how to use the Counter project.
-
-### Contributing
-
-Guidelines for contributing to the Counter project.
-
-### License
-
-License information for the Counter project.
+... (repeat the structure for each project)
