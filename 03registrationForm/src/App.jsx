@@ -1,65 +1,85 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-
-  const [values, setValues] = useState({
-    fname: '',
-    lname: '',
-    email: ''
-  })
-  const [isRegistered, setIsRegistered] = useState(false)
-  useEffect(() => {
-    if (isRegistered) {
-      toast.success('You are successfully registered');
+    const [values, setValues] = useState({
+        firstname: '',
+        lastname: '',
+        email: ''
+    })
+    const fnameHandler = (e) => {
+        setValues({ ...values, firstname: e.target.value })
     }
-  }, [isRegistered]);
+    const lnameHandler = (e) => {
+        setValues({ ...values, lastname: e.target.value })
+    }
+    const emailHandler = (e) => {
+        setValues({ ...values, email: e.target.value })
+    }
+    const formHandler = (e) => {
+        e.preventDefault();
+        console.log(values)
+        setValues({
+            firstname: '',
+            lastname: '',
+            email: ''
+        })
+        if ((values.firstname.length !== 0) && (values.lastname.length !== 0) && (values.email.length !== 0)) {
+            toast("mission Successful")
+        }
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setIsRegistered(true)
-    console.log("submitted")
 
-  }
+    return (
+        <div className='main w-full h-screen flex justify-center items-center bg-teal-700'>
+            <div className='card w-96 bg-white rounded p-5'>
+                <form onSubmit={formHandler} className='flex flex-col gap-5'>
 
-  return (
-    <>
-      <div className='main p-4 w-full h-screen bg-emerald-600'>
-        <div className='card w-96 m-auto p-3 rounded bg-white'>
-          <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
-            <input
-              id='firstName'
-              type='text'
-              className='px-2 py-2 rounded bg-zinc-100'
-              placeholder='First Name'
-              value={values.fname}
-              onChange={(e) => setValues({ ...values, fname: e.target.value })} />
-            <input
-              id='lastName'
-              type='text'
-              className='px-2 py-2 rounded bg-zinc-100'
-              placeholder='Last Name'
-              value={values.lname}
-              onChange={(e) => setValues({ ...values, lname: e.target.value })} />
-            <input
-              id='email'
-              type='email'
-              className='px-2 py-2 rounded bg-zinc-100'
-              placeholder='Email'
-              value={values.email}
-              onChange={(e) => setValues({ ...values, email: e.target.value })} />
-            <button
-              type='submit'
-              className='rounded bg-emerald-500 text-white font-medium px-3 py-2'
-            >Register</button>
+                    <div className='flex flex-col gap-2'>
+                        <input
+                            type='text'
+                            className='px-3 py-2 bg-slate-100'
+                            placeholder='First Name'
+                            value={values.firstname}
+                            onChange={fnameHandler}
 
-          </form>
-          <ToastContainer />
+                        />
+                        <span className='text-sm text-red-500'>Enter Valid First Name</span>
+                    </div>
+                    <div className='flex flex-col gap-2'>
+                        <input
+                            type='text'
+                            className='px-3 py-2 bg-slate-100'
+                            placeholder='Last Name'
+                            value={values.lastname}
+                            onChange={lnameHandler}
+
+                        />
+                        <span className='text-sm text-red-500'>Enter Valid Last Name</span>
+                    </div>
+
+                    <div className='flex flex-col gap-2'>
+                        <input
+                            type='email'
+                            className='px-3 py-2 bg-slate-100'
+                            placeholder='Email'
+                            value={values.email}
+                            onChange={emailHandler}
+
+                        />
+                        <span className='text-sm text-red-500'>Enter Valid email</span>
+                    </div>
+
+                    <button
+                        className='px-3 py-2 text-white font-medium bg-teal-700'
+                    >Register</button>
+                </form>
+                <ToastContainer />
+            </div>
         </div>
-      </div>
-    </>
-  )
+    )
 }
 
 export default App
