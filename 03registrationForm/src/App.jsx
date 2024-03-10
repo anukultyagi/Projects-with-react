@@ -9,6 +9,10 @@ const App = () => {
         lastname: '',
         email: ''
     })
+    const [submitted, setSubmitted] = useState(false)
+
+
+
     const fnameHandler = (e) => {
         setValues({ ...values, firstname: e.target.value })
     }
@@ -20,15 +24,25 @@ const App = () => {
     }
     const formHandler = (e) => {
         e.preventDefault();
-        console.log(values)
+        setSubmitted(true)
+
+        if (values.firstname && values.lastname && values.email) {
+            toast.success('Mission Successful', {
+                position: "top-center",
+            });
+
+        } else {
+            toast.error('Please fill out all fields', {
+                position: "top-center",
+            });
+        }
+
         setValues({
             firstname: '',
             lastname: '',
             email: ''
         })
-        if ((values.firstname.length !== 0) && (values.lastname.length !== 0) && (values.email.length !== 0)) {
-            toast("mission Successful")
-        }
+
     }
 
 
@@ -41,12 +55,13 @@ const App = () => {
                         <input
                             type='text'
                             className='px-3 py-2 bg-slate-100'
-                            placeholder='First Name'
+                            placeholder='First Name *'
                             value={values.firstname}
                             onChange={fnameHandler}
-
+                            required
                         />
-                        <span className='text-sm text-red-500'>Enter Valid First Name</span>
+
+
                     </div>
                     <div className='flex flex-col gap-2'>
                         <input
@@ -57,19 +72,22 @@ const App = () => {
                             onChange={lnameHandler}
 
                         />
-                        <span className='text-sm text-red-500'>Enter Valid Last Name</span>
+
+
                     </div>
 
                     <div className='flex flex-col gap-2'>
                         <input
                             type='email'
                             className='px-3 py-2 bg-slate-100'
-                            placeholder='Email'
+                            placeholder='Email *'
                             value={values.email}
                             onChange={emailHandler}
+                            required
 
                         />
-                        <span className='text-sm text-red-500'>Enter Valid email</span>
+
+
                     </div>
 
                     <button
