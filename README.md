@@ -6,10 +6,9 @@ Welcome to the repository containing various React projects!
 
 - [Search Filter](#search-filter)
 - [Counter](#counter)
-- [Project 3](#project-3)
+- [Registration Form](#registration-form)
+- [Quiz App](#quiz-app)
 - ... (list all your projects)
-
-<a name="search-filter"></a>
 
 ## Search Filter
 
@@ -21,8 +20,6 @@ Description and details of the Search Filter project.
 - Feature 2
 - ...
 
-<a name="counter"></a>
-
 ## Counter
 
 Description and details of the Counter project.
@@ -33,8 +30,22 @@ Description and details of the Counter project.
 - Feature 2
 - ...
 
-<a name="project-3"></a>
+## Registration Form
 
-## Project 3
+Description and details of the Registration Form project.
 
-... (repeat the structure for each project)
+### Features
+
+- Feature 1
+- Feature 2
+- ...
+
+## Quiz App
+
+Description and details of the Quiz App project.
+
+### Features
+
+- Feature 1
+- Feature 2
+- ...
