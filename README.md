@@ -8,7 +8,6 @@ Welcome to the repository containing various React projects!
 - [Counter](#counter)
 - [Registration Form](#registration-form)
 - [Quiz App](#quiz-app)
-- ... (list all your projects)
 
 ## Search Filter
 
