@@ -9,7 +9,7 @@ const App = () => {
         lastname: '',
         email: ''
     })
-    const [submitted, setSubmitted] = useState(false)
+
 
 
 
@@ -24,7 +24,7 @@ const App = () => {
     }
     const formHandler = (e) => {
         e.preventDefault();
-        setSubmitted(true)
+
 
         if (values.firstname && values.lastname && values.email) {
             toast.success('Mission Successful', {
