@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
   const [todo, setTodo] = React.useState('')
-  const [todos, setTodos] = React.useState([])
+  const [todos, setTodos] = React.useState(() => {
+    const localData = localStorage.getItem('todo')
+    if (localData == null) return []
+    return JSON.parse(localData)
+  })
   const [error, setError] = React.useState('')
 
 
@@ -38,10 +44,21 @@ const App = () => {
     setTodo(todos[index].text)
   }
 
+  useEffect(() => {
+    localStorage.setItem('todo', JSON.stringify(todos))
+  }, [todos])
+
+  useEffect(() => {
+    toast('Use short words for better results ', {
+      position: "bottom-right",
+    })
+  }, [])
+
+
   return (
     <>
       <div className='main h-screen w-full flex justify-center items-center bg-teal-950'>
-        <div className='card p-5 w-96 bg-white rounded flex flex-col gap-5'>
+        <div className='card p-5 sm:w-96 w-full mx-4 bg-white rounded flex flex-col gap-5'>
           <div className="">
             <div className='flex gap-4 justify-between'>
               <input
@@ -83,7 +100,9 @@ const App = () => {
             </ul>
           </div>
         </div>
+
       </div>
+      <ToastContainer />
     </>
   )
 }
