@@ -9,6 +9,8 @@ const RecipeDisplayComponents = ({ recipeData }) => {
                     key={index}
                     imgURL={item.recipe.image}
                     recipeTitle={item.recipe.label}
+                    completeRecipeUrlHandler={() => window.open(item.recipe.url)}
+                    ingrediantHandler=''
                 />
             ))}
         </div>
