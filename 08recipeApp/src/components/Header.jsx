@@ -34,7 +34,7 @@ const Header = ({ onSearch }) => {
                     <form onSubmit={handleInputSubmit}>
                         <input
                             type='text'
-                            className='px-2 sm:w-80 focus:outline-none'
+                            className='px-2 sm:w-80 focus:outline-none border-0'
                             placeholder='Search....'
                             value={searchQuery}
                             onChange={handleInputChange}

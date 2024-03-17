@@ -3,6 +3,8 @@ import 'primeicons/primeicons.css';
 import RecipeDisplayComponents from './components/RecipeDisplayComponents';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
+import { Button } from 'flowbite-react';
+import RecipeLoader from './components/RecipeLoader';
 
 
 
@@ -13,6 +15,12 @@ const App = () => {
   const [recipeData, setRecipeData] = useState([])
   const [searchQuery, setSearchQuery] = useState("biryani")
 
+
+
+  const searchQueryHandle = (e) => {
+    setSearchQuery(e)
+  }
+
   useEffect(
     () => {
       const fetchData = async () => {
@@ -21,6 +29,7 @@ const App = () => {
           const response = await axios.get(`https://api.edamam.com/search?q=${searchQuery}&app_id=${apiId}&app_key=${apiKey}`)
           // Handle the response data here
           setRecipeData(response.data.hits)
+          console.log(response.data)
         } catch (error) {
           // Handle any errors that occur during the API call
           console.error('Error fetching data:', error);
@@ -30,19 +39,20 @@ const App = () => {
     },
     [searchQuery]
   )
-  const searchQueryHandle = (e) => {
-    setSearchQuery(e)
-  }
 
   return (
     <>
-      <div className='main  w-full bg-slate-700 '>
+      <div className='main w-full '>
         <Header
           onSearch={searchQueryHandle}
         />
-        <RecipeDisplayComponents
+        {recipeData.length > 0 ? <RecipeDisplayComponents
           recipeData={recipeData}
-        />
+        /> : <RecipeLoader />
+
+        }
+
+
       </div>
     </>
   )

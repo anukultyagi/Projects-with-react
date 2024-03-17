@@ -7,7 +7,7 @@ const RecipeCard = (props) => {
 
     return (
         <>
-            <div className='w-80 p-3 flex flex-col justify-between gap-3 border rounded-lg bg-white shadow-sm'>
+            <div className='w-80 p-3 flex flex-col justify-between gap-3 border border-slate-300 rounded-lg bg-white shadow-sm'>
                 <div className=''>
                     <img className='w-full rounded h-44 mb-4' src={props.imgURL ? props.imgURL : burgerLogo} alt='brandlogo' />
                     <p className='font-medium text-xl'>{props.recipeTitle ? props.recipeTitle : 'Matar Paneer'}</p>
@@ -16,7 +16,7 @@ const RecipeCard = (props) => {
 
                     <Button
                         className='border-teal-500 text-teal-500 w-full hover:bg-teal-500 hover:text-white'
-                        onclick={props.ingrediantHandler}
+                        onClick={props.ingrediantHandler}
                     >Ingrediants</Button>
                     <Button
                         className='border-red-500 text-red-500 w-full hover:bg-red-500 hover:text-white'

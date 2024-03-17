@@ -2,7 +2,7 @@
 const Button = (props) => {
     return (
         <button
-            className={`border py-2 font-medium px-3 ${props.className}`}
+            className={`${props.className} border py-2 font-medium px-3 `}
             onClick={props.onClick}>
             {props.children}
         </button>
