@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-image': "url('./assets/images/img-home.jpg')",
+        'hero-video': "url('./assets/videos/video-2.mp4')",
+
+      }
+    },
   },
   plugins: [],
 }
