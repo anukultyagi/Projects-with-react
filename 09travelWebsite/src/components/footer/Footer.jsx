@@ -62,13 +62,13 @@ function Footer() {
             </div>
             <section className='social-media'>
                 <div className='social-media-wrap'>
-                    <div className='footer-logo'>
-                        <Link to='/' className='social-logo'>
-                            TRVL
-                            <i className='fab fa-typo3' />
+                    <div className='footer-logo my-auto'>
+                        <Link to='/' className='social-logo my-auto'>
+                            TRVL &nbsp;
+                            <i className='pi pi-eject' />
                         </Link>
                     </div>
-                    <small className='website-rights'>TRVL © 2020</small>
+                    <small className='website-rights my-auto'>TRVL © 2024</small>
                     <div className='social-icons'>
                         <Link
                             className='social-icon-link facebook'
@@ -76,7 +76,7 @@ function Footer() {
                             target='_blank'
                             aria-label='Facebook'
                         >
-                            <i className='fab fa-facebook-f' />
+                            <i className='pi pi-facebook-f' />
                         </Link>
                         <Link
                             className='social-icon-link instagram'
@@ -84,7 +84,7 @@ function Footer() {
                             target='_blank'
                             aria-label='Instagram'
                         >
-                            <i className='fab fa-instagram' />
+                            <i className='pi pi-instagram' />
                         </Link>
                         <Link
                             className='social-icon-link youtube'
@@ -92,7 +92,7 @@ function Footer() {
                             target='_blank'
                             aria-label='Youtube'
                         >
-                            <i className='fab fa-youtube' />
+                            <i className='pi pi-youtube' />
                         </Link>
                         <Link
                             className='social-icon-link twitter'
@@ -100,7 +100,7 @@ function Footer() {
                             target='_blank'
                             aria-label='Twitter'
                         >
-                            <i className='fab fa-twitter' />
+                            <i className='pi pi-twitter' />
                         </Link>
                         <Link
                             className='social-icon-link twitter'
@@ -108,7 +108,7 @@ function Footer() {
                             target='_blank'
                             aria-label='LinkedIn'
                         >
-                            <i className='fab fa-linkedin' />
+                            <i className='pi pi-linkedin' />
                         </Link>
                     </div>
                 </div>
