@@ -12,6 +12,7 @@ Welcome to the repository containing various React projects!
 - [Random Quote Generator](#random-quote-generator)
 - [Todo App](#todo-app)
 - [Recipe App](#recipe-app)
+- [Multipage Travel Website](#multipage-travel-website)
 
 ## Search Filter
 
@@ -76,3 +77,9 @@ The Recipe App project allows users to search for recipes based on keywords. It 
 This project demonstrates how to make API requests with query parameters, handle user input, and present dynamic content in a React application.
 
 ![Recipe App Demo](./gifs/recipe-app-demo.gif)
+
+## Multipage Travel Website
+
+The Multipage Travel Website project is a comprehensive React application that simulates a travel website with multiple pages. It includes features like a products, services page, Sign up page.
+
+This project showcases how to create a multi-page application with React Router, manage navigation between pages, and structure components for a cohesive user experience.
